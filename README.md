@@ -15,9 +15,14 @@ thinking about what a11y looks like in this new paradigm - where coding
 assistants are quietly making thousands of small decisions about who our
 software is built for.
 
-This repo is the thing I kept wishing the industry had: a small, opinionated,
-machine-readable scaffold that gives AI coding assistants persistent
-inclusion-oriented guidance during code generation.
+This repo is something I feel is currently missing from the conversation. As
+AI agents increasingly step into the roles of designers and engineers, I feel
+they need to be made aware of their biases from the data they're trained on -
+much like humans need to be made aware of biases in our cognitive schemas
+and our unique understandings of the world. `INCLUSION.md` is a small,
+opinionated, machine-readable scaffold for doing exactly that: giving AI
+coding assistants persistent inclusion-oriented guidance during code
+generation.
 
 For the full rationale - training-data bias, the limits of WCAG, why
 inclusion needs an operational layer in AI-native workflows - read the

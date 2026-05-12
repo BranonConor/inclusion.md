@@ -9,7 +9,7 @@
 
 ---
 
-## Hi, I'm Branon 👋
+## Hi, I'm [Branon](https://branon.dev) 👋
 
 I'm a design engineer who cares a lot about accessibility. As AI-assisted
 development started becoming the default in how we build software, I kept

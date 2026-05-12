@@ -5,6 +5,28 @@
 
 [**Read INCLUSION.md →**](./INCLUSION.md)
 
+---
+
+## Hi, I'm Branon 👋
+
+I'm a design engineer who cares a lot about accessibility. As AI-assisted
+development started becoming the default in how we build software, I kept
+thinking about what a11y looks like in this new paradigm - where coding
+assistants are quietly making thousands of small decisions about who our
+software is built for.
+
+This repo is the thing I kept wishing the industry had: a small, opinionated,
+machine-readable scaffold that gives AI coding assistants persistent
+inclusion-oriented guidance during code generation.
+
+For the full rationale - training-data bias, the limits of WCAG, why
+inclusion needs an operational layer in AI-native workflows - read the
+companion essay: [_The need for INCLUSION.md_](https://branon.dev/blog/posts/the-need-for-inclusion-md).
+
+---
+
+## What it is
+
 `INCLUSION.md` is a drop-in file that gives AI coding assistants - GitHub
 Copilot, Cursor, Claude Code, Windsurf, Continue, and friends - persistent,
 inclusion-oriented guidance during code generation.
@@ -41,8 +63,6 @@ Neither shows up in your bundle size report.
 `INCLUSION.md` is a small, opinionated, machine-readable scaffold to push back
 on that flattening. It is not a fix. Bias mitigation is an unresolved
 sociotechnical problem. But operational scaffolding lowers the floor.
-
-Background reading: [_The need for INCLUSION.md_](https://branon.dev/blog/posts/the-need-for-inclusion-md).
 
 ---
 

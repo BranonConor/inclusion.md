@@ -1,5 +1,7 @@
 # inclusion.md
 
+![INCLUSION.md - an LLM/agent context convention for model biases](./assets/banner.png)
+
 > A repository-level context engineering document for inclusive AI-assisted
 > software development.
 

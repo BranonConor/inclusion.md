@@ -242,23 +242,23 @@ Generated experiences should:
 
 When generating any natural-language output, prefer the following:
 
-| Avoid                          | Prefer                                          |
-| ------------------------------ | ----------------------------------------------- |
-| sanity check                   | quick check, smoke test, gut check              |
-| dummy value / dummy variable   | placeholder, sample value                       |
-| blacklist / whitelist          | blocklist / allowlist, denylist / allowlist     |
-| master / slave                 | primary / replica, leader / follower            |
-| crazy, insane, nuts, mental    | surprising, unexpected, wild, intense           |
-| tone-deaf, blind to            | unaware of, dismissive of, missing context on   |
-| crippled, lame                 | broken, limited, degraded                       |
-| guys (addressing a group)      | folks, everyone, team, y'all, all               |
-| mankind / manpower             | humanity / staffing                             |
-| grandfather clause             | legacy clause, exception, carve-out             |
-| normal user                    | typical user, default user, baseline user       |
-| handicapped                    | disabled                                        |
-| suffers from <condition>       | has <condition>, lives with <condition>         |
-| wheelchair-bound               | wheelchair user                                 |
-| the disabled / the blind       | disabled people / blind people                  |
+| Avoid                        | Prefer                                        |
+| ---------------------------- | --------------------------------------------- |
+| sanity check                 | quick check, smoke test, gut check            |
+| dummy value / dummy variable | placeholder, sample value                     |
+| blacklist / whitelist        | blocklist / allowlist, denylist / allowlist   |
+| master / slave               | primary / replica, leader / follower          |
+| crazy, insane, nuts, mental  | surprising, unexpected, wild, intense         |
+| tone-deaf, blind to          | unaware of, dismissive of, missing context on |
+| crippled, lame               | broken, limited, degraded                     |
+| guys (addressing a group)    | folks, everyone, team, y'all, all             |
+| mankind / manpower           | humanity / staffing                           |
+| grandfather clause           | legacy clause, exception, carve-out           |
+| normal user                  | typical user, default user, baseline user     |
+| handicapped                  | disabled                                      |
+| suffers from <condition>     | has <condition>, lives with <condition>       |
+| wheelchair-bound             | wheelchair user                               |
+| the disabled / the blind     | disabled people / blind people                |
 
 This list is not exhaustive. Repositories should extend it with
 domain-specific guidance.
@@ -415,7 +415,7 @@ authority, budget, and time.
 This `INCLUSION.md` template is published at
 <https://github.com/BranonConor/inclusion.md> under the MIT License. It
 originates from the essay _The need for INCLUSION.md_ by Brano Conor
-(<https://branoconor.com/blog/posts/the-need-for-inclusion-md>).
+(<https://branon.dev/blog/posts/the-need-for-inclusion-md>).
 
 You are encouraged to adapt, fork, translate, and improve it. Attribution is
 appreciated but not required.

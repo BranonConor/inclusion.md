@@ -12,12 +12,12 @@ inclusion-oriented guidance during code generation.
 It is the inclusion-focused sibling of `A11Y.md`, `CONTRIBUTING.md`, and
 `design.md`:
 
-| File              | Operationalizes                                     |
-| ----------------- | --------------------------------------------------- |
-| `README.md`       | What this project is                                |
-| `CONTRIBUTING.md` | How humans contribute                               |
-| `A11Y.md`         | Technical accessibility compliance                  |
-| `design.md`       | Visual and interaction system                       |
+| File              | Operationalizes                                        |
+| ----------------- | ------------------------------------------------------ |
+| `README.md`       | What this project is                                   |
+| `CONTRIBUTING.md` | How humans contribute                                  |
+| `A11Y.md`         | Technical accessibility compliance                     |
+| `design.md`       | Visual and interaction system                          |
 | `INCLUSION.md`    | Contextual, representational, sociotechnical inclusion |
 
 ---
@@ -42,7 +42,7 @@ Neither shows up in your bundle size report.
 on that flattening. It is not a fix. Bias mitigation is an unresolved
 sociotechnical problem. But operational scaffolding lowers the floor.
 
-Background reading: [_The need for INCLUSION.md_](https://branoconor.com/blog/posts/the-need-for-inclusion-md).
+Background reading: [_The need for INCLUSION.md_](https://branon.dev/blog/posts/the-need-for-inclusion-md).
 
 ---
 
@@ -172,4 +172,4 @@ inclusive AI-assisted software development. https://github.com/BranonConor/inclu
 ```
 
 Companion essay: _The need for INCLUSION.md_,
-<https://branoconor.com/blog/posts/the-need-for-inclusion-md>.
+<https://branon.dev/blog/posts/the-need-for-inclusion-md>.

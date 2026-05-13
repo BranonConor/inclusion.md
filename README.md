@@ -75,7 +75,31 @@ sociotechnical problem. But operational scaffolding lowers the floor.
 
 ## Quick start
 
-### 1. Copy the file
+### Option A: Use the CLI (recommended)
+
+```bash
+npx inclusion-md init
+```
+
+That's it. The CLI walks you through a few questions about your project
+(product, primary users, known underserved users, distribution context,
+stakes, ownership, review cadence), picks a starting template (generic,
+frontend app, design system, or backend API), and writes a customized
+`INCLUSION.md` to your repo root.
+
+Useful flags:
+
+```bash
+npx inclusion-md init --variant design-system    # start from a domain example
+npx inclusion-md init --out docs/INCLUSION.md    # write somewhere else
+npx inclusion-md init --yes                      # accept defaults, non-interactive
+npx inclusion-md init --force                    # overwrite without prompting
+npx inclusion-md --help
+```
+
+Requires Node.js 16+. No dependencies.
+
+### Option B: Copy the file by hand
 
 ```bash
 curl -O https://raw.githubusercontent.com/BranonConor/inclusion.md/main/INCLUSION.md
@@ -84,7 +108,7 @@ curl -O https://raw.githubusercontent.com/BranonConor/inclusion.md/main/INCLUSIO
 Or just download [`INCLUSION.md`](./INCLUSION.md) from this repo and drop it
 into the root of your project alongside `README.md`.
 
-### 2. Customize Section 1 (Project Context)
+### Customize Section 1 (Project Context)
 
 The generic template is a starting point. Inclusion guidance is _contextual_ -
 the section that matters most is the one that describes _your_ product, _your_
@@ -96,7 +120,9 @@ users, and _your_ known blind spots. Fill in:
 - distribution context (geography, devices, languages, assistive tech)
 - the stakes when exclusion happens
 
-### 3. Reference it from your AI assistant
+(If you used `npx inclusion-md init`, this is already filled in.)
+
+### Reference it from your AI assistant
 
 Most AI coding assistants support repository-level context files. Point them
 at `INCLUSION.md`.

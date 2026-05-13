@@ -1,0 +1,46 @@
+{
+  "name": "inclusion-md",
+  "version": "0.1.0",
+  "description": "Scaffold an INCLUSION.md - a context engineering doc that gives AI coding assistants inclusion-oriented guidance during code generation.",
+  "keywords": [
+    "inclusion",
+    "accessibility",
+    "a11y",
+    "ai",
+    "llm",
+    "context-engineering",
+    "copilot",
+    "claude",
+    "cursor",
+    "design-systems"
+  ],
+  "homepage": "https://github.com/BranonConor/inclusion.md#readme",
+  "bugs": {
+    "url": "https://github.com/BranonConor/inclusion.md/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BranonConor/inclusion.md.git"
+  },
+  "license": "MIT",
+  "author": "Branon Eusebio (https://branon.dev)",
+  "type": "commonjs",
+  "bin": {
+    "inclusion-md": "bin/inclusion-md.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "templates",
+    "INCLUSION.md",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "node bin/inclusion-md.js --help"
+  }
+}

@@ -16,3 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Domain examples for a frontend app, a design system, and a backend API
   under `examples/`.
 - MIT License.
+- Banner image and project intro by [Branon](https://branon.dev).
+- Zero-dependency CLI (`npx inclusion-md init`) that interactively scaffolds
+  a customized `INCLUSION.md`, picks a variant template, and prints
+  next-steps integration snippets. Supports `--variant`, `--out`, `--force`,
+  `--yes`, and `--no-color`.

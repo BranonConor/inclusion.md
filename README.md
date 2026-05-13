@@ -152,7 +152,7 @@ finalizing any generated output in this repository.
 **Continue / Windsurf / Cody / etc.** - add `INCLUSION.md` to your workspace
 context configuration.
 
-### 4. Treat it like the rest of your engineering docs
+### Treat it like the rest of your engineering docs
 
 - Name an owner.
 - Review on a cadence (quarterly recommended).

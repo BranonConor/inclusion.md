@@ -94,10 +94,50 @@ npx inclusion-md init --variant design-system    # start from a domain example
 npx inclusion-md init --out docs/INCLUSION.md    # write somewhere else
 npx inclusion-md init --yes                      # accept defaults, non-interactive
 npx inclusion-md init --force                    # overwrite without prompting
+npx inclusion-md update                          # re-run questionnaire on existing file
 npx inclusion-md --help
 ```
 
 Requires Node.js 16+. No dependencies.
+
+#### The Design Decisions questionnaire
+
+After the foundational questions, the CLI offers an opt-in **Design Decisions**
+questionnaire - 13 short, skippable questions across six groups:
+
+1. **Core assumptions** - who you primarily build for, and what "default user"
+   assumptions live inside your product
+2. **Authentication & access** - how people get in, who can't, why
+3. **Information collection** - what you ask for, what's required, why
+4. **Interaction model** - how people interact, what patterns you don't support
+5. **Communication & language** - languages and tone you optimize for
+6. **Edge cases & intersections** - where the product breaks, who shows up
+   in unexpected ways
+
+The questions are grounded in three sources:
+
+- _ABLEIST: Measuring Ableist Harms in LLMs_ ([arxiv.org/abs/2510.10998](https://arxiv.org/abs/2510.10998))
+- _Centering Disability Perspectives in LLM Research and Design_ (ACM)
+- Kat Holmes, _Mismatch: How Inclusion Shapes Design_ (MIT Press)
+
+The point isn't perfect answers. The point is **conscious, documented
+tradeoffs**. Skipping a question is a valid answer; the doc just won't speak
+to that dimension yet. Run `npx inclusion-md update` later to fill more in.
+
+Answers land in your `INCLUSION.md` as a `### 1.B Design Decisions` subsection
+under Project Context. Reviewers (human and AI) can flag generated output that
+contradicts the realities you've documented.
+
+#### Updating an existing INCLUSION.md
+
+```bash
+npx inclusion-md update
+```
+
+This re-runs the Project Context + Design Decisions + Maintenance questions
+and rewrites **only** Sections 1 and 12 in place. Any edits you've made to
+the rest of the file - your engineering guidance, your language heuristics,
+your custom sections - are preserved.
 
 ### Option B: Copy the file by hand
 
@@ -190,6 +230,37 @@ These are illustrative, not prescriptive. Adapt them to your context.
 
 It is an operational scaffold. The ceiling is raised by people - especially
 disabled people - with authority, budget, and time.
+
+---
+
+## Troubleshooting
+
+**"`npx inclusion-md` does nothing / hangs."**
+Make sure you're on Node.js 16+ (`node --version`). The CLI uses only
+built-in modules - no install step is required.
+
+**"I can't find an existing `INCLUSION.md`" when running `update`.**
+By default the CLI looks at `./INCLUSION.md`. If yours lives elsewhere,
+pass `--out`:
+
+```bash
+npx inclusion-md update --out docs/INCLUSION.md
+```
+
+**The welcome animation looks weird in CI.**
+It's automatically skipped when stdout isn't a TTY, when `--no-color` is
+passed, or when `CI=1` is set. If you're piping output, pass `--no-color`
+explicitly to be safe.
+
+**I want to script this in a setup wizard.**
+Pass `--yes` to accept all defaults and skip the optional Design Decisions
+questionnaire. Combine with `--variant`, `--out`, and `--force` for a fully
+non-interactive run.
+
+**I edited my `INCLUSION.md` and I'm worried `update` will trash it.**
+`update` only touches Section 1 (Project Context) and Section 12
+(Maintenance). Everything else is preserved verbatim. The smoke tests
+([`test/smoke.test.js`](./test/smoke.test.js)) cover this contract.
 
 ---
 

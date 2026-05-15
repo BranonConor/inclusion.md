@@ -27,12 +27,12 @@ Or download [`INCLUSION.md`](../INCLUSION.md) and drop it next to your
 The CLI ships four templates. Pick the one closest to your project; the
 generic one is fine for most repos.
 
-| Variant         | Best for                                  | Source                                                       |
-| --------------- | ----------------------------------------- | ------------------------------------------------------------ |
-| `generic`       | Most repos. Default.                      | [`INCLUSION.md`](../INCLUSION.md)                            |
-| `frontend-app`  | Consumer web apps. Forms, microcopy, AI.  | [`examples/frontend-app`](../examples/frontend-app)          |
-| `design-system` | Component libraries. Tokens, RTL, density.| [`examples/design-system`](../examples/design-system)        |
-| `backend-api`   | APIs / SDKs. Schema, errors, telemetry.   | [`examples/backend-api`](../examples/backend-api)            |
+| Variant         | Best for                                   | Source                                                |
+| --------------- | ------------------------------------------ | ----------------------------------------------------- |
+| `generic`       | Most repos. Default.                       | [`INCLUSION.md`](../INCLUSION.md)                     |
+| `frontend-app`  | Consumer web apps. Forms, microcopy, AI.   | [`examples/frontend-app`](../examples/frontend-app)   |
+| `design-system` | Component libraries. Tokens, RTL, density. | [`examples/design-system`](../examples/design-system) |
+| `backend-api`   | APIs / SDKs. Schema, errors, telemetry.    | [`examples/backend-api`](../examples/backend-api)     |
 
 ```bash
 npx inclusion-md init --variant design-system

@@ -33,15 +33,15 @@ npx inclusion-md update --out docs/INCLUSION.md
 
 ## Options
 
-| Flag                  | Description                                                      |
-| --------------------- | ---------------------------------------------------------------- |
-| `-o, --out <path>`    | Output path. Default: `./INCLUSION.md`.                          |
-| `--variant <name>`    | `generic` (default), `frontend-app`, `design-system`, `backend-api`. |
-| `--force`             | Overwrite existing file without prompting.                       |
-| `-y, --yes`           | Accept defaults; skip the optional Design Decisions questionnaire. |
-| `--no-color`          | Disable ANSI colors and the welcome animation.                   |
-| `-h, --help`          | Show help.                                                       |
-| `-v, --version`       | Show CLI version.                                                |
+| Flag               | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| `-o, --out <path>` | Output path. Default: `./INCLUSION.md`.                              |
+| `--variant <name>` | `generic` (default), `frontend-app`, `design-system`, `backend-api`. |
+| `--force`          | Overwrite existing file without prompting.                           |
+| `-y, --yes`        | Accept defaults; skip the optional Design Decisions questionnaire.   |
+| `--no-color`       | Disable ANSI colors and the welcome animation.                       |
+| `-h, --help`       | Show help.                                                           |
+| `-v, --version`    | Show CLI version.                                                    |
 
 ## The Design Decisions questionnaire
 
@@ -50,14 +50,14 @@ six groups. The point isn't perfect answers — it's **conscious, documented
 tradeoffs**. Skipping is valid; the doc just won't speak to that dimension
 yet, and you can fill more in later with `update`.
 
-| Group                          | Surfaces                                                  |
-| ------------------------------ | --------------------------------------------------------- |
-| Core assumptions               | Who you build for; "default user" assumptions in product. |
-| Authentication & access        | How people get in, who can't, why.                        |
-| Information collection         | What you ask for; required vs. optional; why.             |
-| Interaction model              | How people interact; patterns you don't support.          |
-| Communication & language       | Languages and tone you optimize for.                      |
-| Edge cases & intersections     | Where it breaks; who shows up unexpectedly.               |
+| Group                      | Surfaces                                                  |
+| -------------------------- | --------------------------------------------------------- |
+| Core assumptions           | Who you build for; "default user" assumptions in product. |
+| Authentication & access    | How people get in, who can't, why.                        |
+| Information collection     | What you ask for; required vs. optional; why.             |
+| Interaction model          | How people interact; patterns you don't support.          |
+| Communication & language   | Languages and tone you optimize for.                      |
+| Edge cases & intersections | Where it breaks; who shows up unexpectedly.               |
 
 Answers land as a `### 1.B Design Decisions` subsection under Project
 Context. Reviewers (human and AI) can flag generated output that

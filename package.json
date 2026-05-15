@@ -1,6 +1,6 @@
 {
   "name": "inclusion-md",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Scaffold an INCLUSION.md - a context engineering doc that gives AI coding assistants inclusion-oriented guidance during code generation.",
   "keywords": [
     "inclusion",
@@ -34,6 +34,7 @@
     "templates",
     "INCLUSION.md",
     "examples",
+    "docs",
     "README.md",
     "LICENSE"
   ],

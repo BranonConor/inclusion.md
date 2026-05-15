@@ -59,13 +59,13 @@ your repo root. Then [point your AI assistant at it](./docs/integrations.md).
 
 ## Documentation
 
-| Doc                                                | What's in it                                                          |
-| -------------------------------------------------- | --------------------------------------------------------------------- |
-| [Getting started](./docs/getting-started.md)       | Install, pick a variant, customize Section 1, treat as infrastructure.|
-| [AI assistant integrations](./docs/integrations.md)| Wire it into Copilot, Cursor, Claude Code, Continue, Windsurf.        |
-| [CLI reference](./docs/cli-reference.md)           | All commands, flags, the Design Decisions questionnaire, troubleshooting. |
-| [How it works](./docs/how-it-works.md)             | How agents load it, the context-window tradeoff, what this is _not_.  |
-| [Examples](./examples)                             | Adapted templates: frontend app, design system, backend API.          |
+| Doc                                                 | What's in it                                                              |
+| --------------------------------------------------- | ------------------------------------------------------------------------- |
+| [Getting started](./docs/getting-started.md)        | Install, pick a variant, customize Section 1, treat as infrastructure.    |
+| [AI assistant integrations](./docs/integrations.md) | Wire it into Copilot, Cursor, Claude Code, Continue, Windsurf.            |
+| [CLI reference](./docs/cli-reference.md)            | All commands, flags, the Design Decisions questionnaire, troubleshooting. |
+| [How it works](./docs/how-it-works.md)              | How agents load it, the context-window tradeoff, what this is _not_.      |
+| [Examples](./examples)                              | Adapted templates: frontend app, design system, backend API.              |
 
 ---
 

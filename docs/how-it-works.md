@@ -6,12 +6,12 @@ smaller than it looks.
 
 ## How it gets loaded, by tool
 
-| Tool                       | How it loads `INCLUSION.md`                          | When                                            |
-| -------------------------- | ---------------------------------------------------- | ----------------------------------------------- |
-| GitHub Copilot Chat        | Via `.github/copilot-instructions.md` referencing it | Once per session/thread                         |
-| Cursor                     | Via `.cursor/rules/inclusion.md` or `.cursorrules`   | On rule activation, often per turn for matches  |
-| Claude Code                | Via `CLAUDE.md` reference, then `Read` tool fetches  | On demand, agent decides                        |
-| Continue / Cody / Windsurf | Workspace context file                               | Once per session                                |
+| Tool                       | How it loads `INCLUSION.md`                          | When                                           |
+| -------------------------- | ---------------------------------------------------- | ---------------------------------------------- |
+| GitHub Copilot Chat        | Via `.github/copilot-instructions.md` referencing it | Once per session/thread                        |
+| Cursor                     | Via `.cursor/rules/inclusion.md` or `.cursorrules`   | On rule activation, often per turn for matches |
+| Claude Code                | Via `CLAUDE.md` reference, then `Read` tool fetches  | On demand, agent decides                       |
+| Continue / Cody / Windsurf | Workspace context file                               | Once per session                               |
 
 The pattern across all of them: the file isn't crammed into every LLM call.
 It's loaded **once into the system prompt or a context-window slot** at

@@ -69,6 +69,33 @@ your repo root. Then [point your AI assistant at it](./docs/integrations.md).
 
 ---
 
+## Does it actually do anything?
+
+Short answer: yes, measurably — at least on the controlled prompts I
+tested.
+
+I ran a small experiment: one AI agent built four features twice — once
+in a Next.js scaffold with **no** `INCLUSION.md` (Condition A) and once
+in an identical scaffold **with** one (Condition B). The same agent
+scored all eight outputs against a five-category rubric (error messages,
+flexibility, cognitive access, sensory access, constraint awareness).
+
+Across the four shared categories (max 40), the average moved from
+**19.25 in A to 34.75 in B — a +80.5% improvement**, with gains on every
+challenge. The largest single jump was **Flexibility (+192%)**: the doc's
+habit of asking _"could this work differently?"_ produced configurable,
+fallback-aware components more reliably than its pointed a11y guidance
+produced direct a11y improvements.
+
+It's a same-agent-as-author-and-auditor design with n=4 — the report
+discloses that up front. It's a directional signal, not a clinical
+result.
+
+- 📊 Experiment repo: [BranonConor/inclusion-md-experiment](https://github.com/BranonConor/inclusion-md-experiment)
+- 📄 Full report: [`REPORT.md`](https://github.com/BranonConor/inclusion-md-experiment/blob/main/experiment/REPORT.md)
+
+---
+
 ## Hi, I'm [Branon](https://branon.dev) 👋
 
 I'm a design engineer who cares a lot about accessibility. As AI-assisted

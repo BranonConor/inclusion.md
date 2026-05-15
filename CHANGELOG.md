@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] - 2026-05-15
+
+### Fixed
+
+- **MaxListenersExceededWarning during long questionnaires.** Each `ask()`
+  call was registering a new `'close'` listener on the readline interface,
+  so users running the full Design Decisions questionnaire saw
+  `Possible EventEmitter memory leak detected. 11 close listeners added`
+  starting around question 11. Now a single `'close'` handler is registered
+  per prompter and rejects whatever `ask()` is in flight.
+
 ## [0.2.0] - 2026-05-12
 
 ### Added

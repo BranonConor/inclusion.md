@@ -5,40 +5,17 @@
 > A repository-level context engineering document for inclusive AI-assisted
 > software development.
 
-[**Read INCLUSION.md →**](./INCLUSION.md)
-
----
-
-## Hi, I'm [Branon](https://branon.dev) 👋
-
-I'm a design engineer who cares a lot about accessibility. As AI-assisted
-development started becoming the default in how we build software, I kept
-thinking about what a11y looks like in this new paradigm - where coding
-assistants are quietly making thousands of small decisions about who our
-software is built for.
-
-This repo is something I feel is currently missing from the conversation. As
-AI agents increasingly step into the roles of designers and engineers, I feel
-they need to be made aware of their biases from the data they're trained on -
-much like humans need to be made aware of biases in our cognitive schemas
-and our unique understandings of the world. `INCLUSION.md` is a small,
-opinionated, machine-readable scaffold for doing exactly that: giving AI
-coding assistants persistent inclusion-oriented guidance during code
-generation.
-
-For the full rationale - training-data bias, the limits of WCAG, why
-inclusion needs an operational layer in AI-native workflows - read the
-companion essay: [_The need for INCLUSION.md_](https://branon.dev/blog/posts/the-need-for-inclusion-md).
+[**Read INCLUSION.md →**](./INCLUSION.md) · [npm](https://www.npmjs.com/package/inclusion-md) · [companion essay](https://branon.dev/blog/posts/the-need-for-inclusion-md)
 
 ---
 
 ## What it is
 
-`INCLUSION.md` is a drop-in file that gives AI coding assistants - GitHub
-Copilot, Cursor, Claude Code, Windsurf, Continue, and friends - persistent,
+`INCLUSION.md` is a drop-in file that gives AI coding assistants — GitHub
+Copilot, Cursor, Claude Code, Windsurf, Continue, and friends — persistent,
 inclusion-oriented guidance during code generation.
 
-It is the inclusion-focused sibling of `A11Y.md`, `CONTRIBUTING.md`, and
+It's the inclusion-focused sibling of `A11Y.md`, `CONTRIBUTING.md`, and
 `design.md`:
 
 | File              | Operationalizes                                        |
@@ -49,318 +26,77 @@ It is the inclusion-focused sibling of `A11Y.md`, `CONTRIBUTING.md`, and
 | `design.md`       | Visual and interaction system                          |
 | `INCLUSION.md`    | Contextual, representational, sociotechnical inclusion |
 
----
+## Why it exists
 
-## Why this exists
+AI coding assistants now sit _between_ human intent and the code, copy, and
+interactions that ship. They generate output based on what's statistically
+likely given training data — which carries the accumulated biases of the
+public web, open-source code, and English-language text. That means
+assistants quietly amplify two kinds of debt:
 
-AI-assisted development is becoming infrastructure. Coding assistants now sit
-_between_ human intent and the code, copy, and interactions that ship. They
-generate output based on what is statistically likely given their training
-data - and that training data carries the accumulated biases of the public
-web, open-source code, and English-language text.
-
-That means AI assistants can quietly amplify two kinds of debt at once:
-
-- **Accessibility debt** - inaccessible patterns inherited from the public web.
-- **Representational debt** - narrow assumptions about whose communication
+- **Accessibility debt** — inaccessible patterns inherited from the public web.
+- **Representational debt** — narrow assumptions about whose communication
   styles, identities, and lived experiences count as "default."
 
-Neither shows up in your bundle size report.
+Neither shows up in your bundle size report. `INCLUSION.md` is a small,
+opinionated scaffold to push back. Not a fix — bias mitigation is unsolved —
+but operational scaffolding that lowers the floor.
 
-`INCLUSION.md` is a small, opinionated, machine-readable scaffold to push back
-on that flattening. It is not a fix. Bias mitigation is an unresolved
-sociotechnical problem. But operational scaffolding lowers the floor.
+For the long version, read the companion essay:
+[_The need for INCLUSION.md_](https://branon.dev/blog/posts/the-need-for-inclusion-md).
 
 ---
 
 ## Quick start
 
-### Option A: Use the CLI (recommended)
-
 ```bash
 npx inclusion-md init
 ```
 
-That's it. The CLI walks you through a few questions about your project
-(product, primary users, known underserved users, distribution context,
-stakes, ownership, review cadence), picks a starting template (generic,
-frontend app, design system, or backend API), and writes a customized
-`INCLUSION.md` to your repo root.
+That's it. Node.js 16+ required, zero dependencies. The CLI walks you
+through a short questionnaire and writes a customized `INCLUSION.md` to
+your repo root. Then [point your AI assistant at it](./docs/integrations.md).
 
-Useful flags:
+## Documentation
 
-```bash
-npx inclusion-md init --variant design-system    # start from a domain example
-npx inclusion-md init --out docs/INCLUSION.md    # write somewhere else
-npx inclusion-md init --yes                      # accept defaults, non-interactive
-npx inclusion-md init --force                    # overwrite without prompting
-npx inclusion-md update                          # re-run questionnaire on existing file
-npx inclusion-md --help
-```
-
-Requires Node.js 16+. No dependencies.
-
-#### The Design Decisions questionnaire
-
-After the foundational questions, the CLI offers an opt-in **Design Decisions**
-questionnaire - 13 short, skippable questions across six groups:
-
-1. **Core assumptions** - who you primarily build for, and what "default user"
-   assumptions live inside your product
-2. **Authentication & access** - how people get in, who can't, why
-3. **Information collection** - what you ask for, what's required, why
-4. **Interaction model** - how people interact, what patterns you don't support
-5. **Communication & language** - languages and tone you optimize for
-6. **Edge cases & intersections** - where the product breaks, who shows up
-   in unexpected ways
-
-The questions are grounded in three sources:
-
-- _ABLEIST: Measuring Ableist Harms in LLMs_ ([arxiv.org/abs/2510.10998](https://arxiv.org/abs/2510.10998))
-- _Centering Disability Perspectives in LLM Research and Design_ (ACM)
-- Kat Holmes, _Mismatch: How Inclusion Shapes Design_ (MIT Press)
-
-The point isn't perfect answers. The point is **conscious, documented
-tradeoffs**. Skipping a question is a valid answer; the doc just won't speak
-to that dimension yet. Run `npx inclusion-md update` later to fill more in.
-
-Answers land in your `INCLUSION.md` as a `### 1.B Design Decisions` subsection
-under Project Context. Reviewers (human and AI) can flag generated output that
-contradicts the realities you've documented.
-
-#### Updating an existing INCLUSION.md
-
-```bash
-npx inclusion-md update
-```
-
-This re-runs the Project Context + Design Decisions + Maintenance questions
-and rewrites **only** Sections 1 and 12 in place. Any edits you've made to
-the rest of the file - your engineering guidance, your language heuristics,
-your custom sections - are preserved.
-
-### Option B: Copy the file by hand
-
-```bash
-curl -O https://raw.githubusercontent.com/BranonConor/inclusion.md/main/INCLUSION.md
-```
-
-Or just download [`INCLUSION.md`](./INCLUSION.md) from this repo and drop it
-into the root of your project alongside `README.md`.
-
-### Customize Section 1 (Project Context)
-
-The generic template is a starting point. Inclusion guidance is _contextual_ -
-the section that matters most is the one that describes _your_ product, _your_
-users, and _your_ known blind spots. Fill in:
-
-- the product description
-- who you've designed for
-- who you _haven't_ designed for well (yet)
-- distribution context (geography, devices, languages, assistive tech)
-- the stakes when exclusion happens
-
-(If you used `npx inclusion-md init`, this is already filled in.)
-
-### Reference it from your AI assistant
-
-Most AI coding assistants support repository-level context files. Point them
-at `INCLUSION.md`.
-
-**GitHub Copilot** - create `.github/copilot-instructions.md`:
-
-```md
-This repository contains an `INCLUSION.md` at the project root.
-Follow its guidance when generating UI copy, code, documentation,
-error messages, persona descriptions, and review feedback.
-```
-
-**Cursor** - in `.cursor/rules/inclusion.md` or `.cursorrules`:
-
-```md
-Always read and follow `/INCLUSION.md` when generating code, copy,
-or design artifacts in this repository.
-```
-
-**Claude Code** - in `CLAUDE.md`:
-
-```md
-Read `/INCLUSION.md` and apply its review prompts before
-finalizing any generated output in this repository.
-```
-
-**Continue / Windsurf / Cody / etc.** - add `INCLUSION.md` to your workspace
-context configuration.
-
-### Treat it like the rest of your engineering docs
-
-- Name an owner.
-- Review on a cadence (quarterly recommended).
-- Track changes in a `CHANGELOG.md` or in releases.
-- Provide a feedback route for users and contributors.
+| Doc                                                | What's in it                                                          |
+| -------------------------------------------------- | --------------------------------------------------------------------- |
+| [Getting started](./docs/getting-started.md)       | Install, pick a variant, customize Section 1, treat as infrastructure.|
+| [AI assistant integrations](./docs/integrations.md)| Wire it into Copilot, Cursor, Claude Code, Continue, Windsurf.        |
+| [CLI reference](./docs/cli-reference.md)           | All commands, flags, the Design Decisions questionnaire, troubleshooting. |
+| [How it works](./docs/how-it-works.md)             | How agents load it, the context-window tradeoff, what this is _not_.  |
+| [Examples](./examples)                             | Adapted templates: frontend app, design system, backend API.          |
 
 ---
 
-## Examples
+## Hi, I'm [Branon](https://branon.dev) 👋
 
-The [`examples/`](./examples) folder contains adapted `INCLUSION.md` files for
-different repo types:
-
-- [`examples/frontend-app/INCLUSION.md`](./examples/frontend-app/INCLUSION.md) -
-  a consumer-facing web app
-- [`examples/design-system/INCLUSION.md`](./examples/design-system/INCLUSION.md) -
-  a component library / design system
-- [`examples/backend-api/INCLUSION.md`](./examples/backend-api/INCLUSION.md) -
-  a backend API / SDK
-
-These are illustrative, not prescriptive. Adapt them to your context.
-
----
-
-## How AI assistants actually use it
-
-A reasonable concern when looking at a 400+ line markdown file: _won't this
-eat my context window every prompt?_ Short answer: no, and the cost is
-smaller than it looks.
-
-### How it gets loaded, by tool
-
-| Tool                       | How it loads `INCLUSION.md`                          | When                                            |
-| -------------------------- | ---------------------------------------------------- | ----------------------------------------------- |
-| GitHub Copilot Chat        | Via `.github/copilot-instructions.md` referencing it | Once per session/thread                         |
-| Cursor                     | Via `.cursor/rules/inclusion.md` or `.cursorrules`   | On rule activation, often per turn for matches  |
-| Claude Code                | Via `CLAUDE.md` reference, then `Read` tool fetches  | On demand, agent decides                        |
-| Continue / Cody / Windsurf | Workspace context file                               | Once per session                                |
-
-The pattern across all of them: the file isn't crammed into every LLM call.
-It's loaded **once into the system prompt or a context-window slot** at
-session start (Copilot, Continue), or **fetched on demand** when a task
-touches relevant code (Claude Code, Cursor with rules).
-
-### Token math
-
-A typical generated `INCLUSION.md` is roughly **4-6k tokens**. For reference:
-
-- Modern context windows: 128k (GPT-4o), 200k (Claude Sonnet), 1M+ (Gemini 2.0)
-- A single file you're editing: 500-3000 tokens
-- A full chat session: usually 20-60k tokens of context
-
-So even on a "small" 128k window, `INCLUSION.md` is **~3-5% of context
-budget**. That's the same order of magnitude as a single React component
-file. Worth it.
-
-### How to think about the tradeoff
-
-1. **Treat it like `tsconfig.json` or a lint rule set.** It's infrastructure:
-   loaded once, applies to everything, doesn't need to be re-introduced.
-2. **The cost is per-session, not per-prompt.** Modern agents cache the
-   system prompt; the second turn doesn't re-pay the upload cost.
-3. **The first ~80 lines do the load-bearing work.** Sections 0-2 (what
-   this is + core principle + project context) carry the main signal.
-   Sections 3-13 are reference material the agent can skim or cite when
-   relevant.
-4. **You can split it later if it bloats.** A lean root `INCLUSION.md` that
-   links to `docs/inclusion/*.md` deep dives is a valid pattern - same way
-   `README.md` links to `CONTRIBUTING.md`.
-
-### Honest caveats
-
-System-prompt-style guidance is **soft pressure**, not enforcement. It works
-best when:
-
-- The agent is instructed to **cite specific guidance** when generating code
-  ("Reference the inclusive-language table in Section 7 when writing
-  user-facing copy")
-- You **review output against it** rather than expecting the agent to police
-  itself perfectly
-- It's paired with **automated checks** (lint rules, a11y tests) for things
-  that can be checked
-
-`INCLUSION.md` is a thinking-tool for the human reviewer as much as a
-directive for the agent. Those 4-6k tokens aren't there to fill the context
-window - they're there so when generated output ships an ableist phrase or a
-hover-only interaction, you can point at a section number and say "this is
-the thing we already decided."
-
----
-
-## What this is not
-
-`INCLUSION.md` is **not**:
-
-- a substitute for participatory research with disabled users
-- a substitute for hiring disabled designers, engineers, and researchers
-- a substitute for accessibility audits and remediation
-- a substitute for legal and regulatory compliance
-- a guarantee that any AI assistant will follow its guidance
-- a finished or final artifact
-
-It is an operational scaffold. The ceiling is raised by people - especially
-disabled people - with authority, budget, and time.
-
----
-
-## Troubleshooting
-
-**"`npx inclusion-md` does nothing / hangs."**
-Make sure you're on Node.js 16+ (`node --version`). The CLI uses only
-built-in modules - no install step is required.
-
-**"I can't find an existing `INCLUSION.md`" when running `update`.**
-By default the CLI looks at `./INCLUSION.md`. If yours lives elsewhere,
-pass `--out`:
-
-```bash
-npx inclusion-md update --out docs/INCLUSION.md
-```
-
-**The welcome animation looks weird in CI.**
-It's automatically skipped when stdout isn't a TTY, when `--no-color` is
-passed, or when `CI=1` is set. If you're piping output, pass `--no-color`
-explicitly to be safe.
-
-**I want to script this in a setup wizard.**
-Pass `--yes` to accept all defaults and skip the optional Design Decisions
-questionnaire. Combine with `--variant`, `--out`, and `--force` for a fully
-non-interactive run.
-
-**I edited my `INCLUSION.md` and I'm worried `update` will trash it.**
-`update` only touches Section 1 (Project Context) and Section 12
-(Maintenance). Everything else is preserved verbatim. The smoke tests
-([`test/smoke.test.js`](./test/smoke.test.js)) cover this contract.
+I'm a design engineer who cares a lot about accessibility. As AI-assisted
+development became the default for shipping software, I kept thinking about
+what a11y looks like in this new paradigm — where coding assistants are
+quietly making thousands of small decisions about who our software is built
+for. This repo is something I felt was missing from the conversation.
 
 ---
 
 ## Contributing
 
-Pull requests, issues, translations, domain-specific extensions, and critiques
-are welcome. See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+Pull requests, issues, translations, domain-specific extensions, and
+critiques are welcome. See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
-This project takes language and representation seriously. Contributions that
-improve language guidance, add domain-specific sections, or correct ableist or
-exclusionary defaults are especially appreciated. Contributions from disabled
-practitioners and from communities underrepresented in this kind of tooling
-are prioritized in review.
+This project takes language and representation seriously. Contributions
+that improve language guidance, add domain-specific sections, or correct
+ableist or exclusionary defaults are especially appreciated. Contributions
+from disabled practitioners and from communities underrepresented in this
+kind of tooling are prioritized in review.
 
----
+## License & citation
 
-## License
+MIT — see [`LICENSE`](./LICENSE). Fork, adapt, translate, ship.
 
-MIT. See [`LICENSE`](./LICENSE).
-
-You are encouraged to fork, adapt, translate, and ship this in your own
-projects. Attribution is appreciated but not required.
-
----
-
-## Citation
-
-If you cite this work academically or in industry writing:
+If you cite this academically or in industry writing:
 
 ```
 Conor, B. (2026). INCLUSION.md: A context engineering scaffold for
 inclusive AI-assisted software development. https://github.com/BranonConor/inclusion.md
 ```
-
-Companion essay: _The need for INCLUSION.md_,
-<https://branon.dev/blog/posts/the-need-for-inclusion-md>.

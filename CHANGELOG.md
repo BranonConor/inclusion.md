@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3] - 2026-05-15
+
+### Changed
+
+- **New welcome animation: `INCLUSION.md` wordmark.** The dots-connecting
+  animation is replaced with a 3-row block-letter wordmark that wipes in
+  left-to-right and settles from dim to bold. Mono only — color is
+  reserved for meaningful cues elsewhere in the CLI, not decoration. Same
+  accessibility skips as before — non-TTY, `--no-color`, `--yes`, and
+  `CI=1` runs bypass the animation entirely.
+
 ## [0.2.2] - 2026-05-15
 
 ### Changed

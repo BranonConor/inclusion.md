@@ -5,6 +5,20 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.4] - 2026-05-15
+
+### Removed
+
+- **Welcome wordmark animation.** Removed the `INCLUSION.md` block-letter
+  wordmark (and its predecessor 3-frame animation) that played at the
+  start of `init` and `update`. The 73-column art wrapped and broke on
+  narrow terminals, and a decorative pre-roll runs counter to the
+  accessibility posture of this tool — motion and ASCII art are exactly
+  the kind of thing screen readers, braille displays, and reflow-sensitive
+  terminals handle poorly. The welcome message ("Welcome to the
+  INCLUSION.md CLI!") is preserved. `lib/ascii.js` is deleted; no public
+  API changed.
+
 ## [0.2.3] - 2026-05-15
 
 ### Changed
